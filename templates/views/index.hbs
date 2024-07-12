@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Snaptool is a platform offering YouTube video downloads, real-time weather reports, and excellent customer support.">
+    <title>Snaptool</title>
+    <style>
+      /* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: gilroy, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    position: relative;
+    overflow: hidden;
+}
+
+#page {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#main-image {
+    max-width: 200%;
+    max-height: 100%;
+    width: 150%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+#page1 {
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 90px 50px 90px;
+    flex-wrap: wrap;
+}
+
+.page1-text {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding-top: 60px;
+    font-size: 30px;
+}
+#page1-image {
+    max-width: 100px;
+    max-height: 100px;
+    display: block;
+    margin: 0 auto; 
+}
+
+.box-header {
+    text-align: center;
+}
+
+#box-text {
+    margin: 20px 20px 15px 20px;
+    color: #717171;
+    text-align: center;
+}
+#box-button-a{
+  text-decoration: none; 
+}
+#box-button p {
+    font-size: 20px;
+}
+#box-button {
+    margin: 20px auto;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: white;
+    color: #212121;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#box-button:hover {
+    background-color: #6e21e9;
+}
+
+.box-1, .box-2, .box-3 {
+    background-color: white;
+    width: 30%;
+    max-height: 500px;
+    height: auto;
+    margin: 10px;
+    padding-top: 20px;
+}
+
+#page1:hover #page1-box:not(:hover){
+  opacity: 0.7;
+  transform: scale(.85);
+  background-color: #fdfdfd;
+  transition-duration: 1s;
+}
+#page1-box:hover{
+  border-radius: 30px;
+  transition-duration: 1.5s;
+}
+
+#loop {
+    display: flex;
+    position: absolute;
+    top: 30%;
+    height: 25%;
+    width: 100%;
+    font-size: 100px;
+    white-space: nowrap;
+    font-family: gilroy;
+}
+
+#loop > h1 {
+    font-weight: 400;
+    animation-name: anim;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#loop > h1 > span {
+    -webkit-text-stroke: 1.2px #000;
+    color: transparent;
+    font-weight: 500;
+}
+
+@keyframes anim {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7%;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    padding: 0px 30px;
+    background-color: #f1f1f1;
+}
+
+#nav > h3 {
+    font-family: gilroy, sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+#nav a button {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#nav > button:hover {
+    background-color: #333;
+}
+
+/* Footer style */
+footer {
+    background-color: black;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-info {
+    margin-bottom: 10px;
+}
+
+.footer-info p {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.credits {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+footer .social-icons {
+    margin: 20px 0;
+}
+
+footer .social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+@media (max-width: 768px) {
+    .footer-info p,
+    .credits p {
+        font-size: 14px;
+    }
+    #page1 {
+        padding: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .box-1, .box-2, .box-3 {
+        width: 90%;
+    }
+    #main-image {
+    max-width: 300%;
+    max-height: 100%;
+    width: 280%;
+    height: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-info p,
+    .credits p {
+        font-size: 12px;
+    }
+    #loop {
+        font-size: 50px;
+    }
+    #page1-image {
+    margin: 25px 0px 0px 35%;
+    }
+    #main-image {
+    max-width: 300%;
+    max-height: 100%;
+    width: 250%;
+    height: 80%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <h3><b>SNAP</b>TOOL</h3>
+        <a href="/register"><button>Signup</button></a>
+    </div>
+    <div id="main">
+        <div id="page">
+            <div id="loop">
+                <h1><b>CYBER</b>FICTION IS THE <b><i>REAL</i></b> <span>STORY</span> IN THE <span><i>METAVERSE.</i></span></h1>
+                <h1><b>CYBER</b>FICTION IS THE <b><i>REAL</i></b> <span>STORY</span> IN THE <span><i>METAVERSE.</i></span></h1>
+                <h1><b>CYBER</b>FICTION IS THE <b><i>REAL</i></b> <span>STORY</span> IN THE <span><i>METAVERSE.</i></span></h1>
+            </div>
+            <img src="https://i.ibb.co/2MymrVv/male0001.png" alt="Snaptool Image" id="main-image">
+        </div>
+        
+        <div class="page1-text">
+          <h2>Features</h2>
+        </div>
+        <div id="page1">
+          
+           <div class="box-1" id="page1-box">
+            <img src="https://i.ibb.co/pRH2qvm/download.png" alt="YTdownload" id="page1-image">
+            <h3 class="box-header">YT-Download</h3>
+            <p id="box-text">
+              Effortlessly download your favorite YouTube videos with our fast tool. Available in 360p, 480p, 720p, and 1080p for offline access anytime!
+            </p>
+            <a href="#" id="box-button-a"><button id="box-button"><p>Learn More</p></button></a>
+           </div>
+           <div class="box-2" id="page1-box">
+              <img src="https://i.ibb.co/fdBt5jH/weather.png" alt="weather" id="page1-image">
+              <h3 class="box-header">Weather Report</h3>
+              <p id="box-text">Stay updated with real-time weather reports tailored to your location. Get accurate forecasts to plan your day with confidence!
+            </p>
+            <a href="#" id="box-button-a"><button id="box-button"><p>Learn More</p></button></a>
+           </div>
+           <div class="box-3" id="page1-box">
+              <img src="https://i.ibb.co/gJ2scYB/Contact.png" alt="Contact us" id="page1-image">
+             <h3 class="box-header">Contact Us</h3>
+             <p id="box-text">Need assistance or have questions? Reach out to us anytime! We're here to provide support and answer all your inquiries promptly.
+            </p>
+            <a href="#" id="box-button-a"><button id="box-button"><p>Learn More</p></button></a>
+           </div>
+           
+        </div>
+    </div>
+    <footer>
+        <div class="footer-info">
+            <p>Contact Us: aadishranjan35@gmail.com</p>
+        </div>
+        <div class="credits">
+            <p>&copy; 2024 SNAPTOOL. All rights reserved.</p>
+            <p>Designed by Aadish ranjan</p>
+        </div>
+        <div class="social-media">
+            <!-- Social media icons here -->
+        </div>
+    </footer>
+</body>
+</html>

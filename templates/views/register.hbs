@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register on Snaptool to create an account and start downloading YouTube videos, getting real-time weather reports, and more.">
+    <title>Register - Snaptool</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+        header, footer {
+            width: 100%;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .signup-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+        }
+        .signup-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .signup-container input[type="text"],
+        .signup-container input[type="email"], 
+        .signup-container input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .signup-container button {
+            width: 100%;
+            padding: 15px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .signup-container button:hover {
+            background-color: #333;
+        }
+        .signup-container .login-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .signup-container .login-link a {
+            color: blue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="main-content">
+  <div class="signup-container">
+   <h2>Signup</h2>
+   <form action="/register" method="POST">
+    <input type="text" maxlength="20" name="username" placeholder="Full Name" required>
+    <input type="email" maxlength="40" name="email" placeholder="Email" required>
+    <input type="password" name="password" maxlength="40" placeholder="Password" required>
+    <input type="password" name="confirmpassword" maxlength="40" placeholder="Confirm Password" required>
+    <button type="submit">Signup</button>
+    <div class="login-link">
+      Already have an account? <a href="/Login">Login</a>
+     </div>
+  </form>
+ </div>
+</div>
+</body>
+</html>

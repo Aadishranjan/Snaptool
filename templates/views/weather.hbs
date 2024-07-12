@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Report</title>
+    <link rel="preload" as="image" href="images/rain-background.gif">
+    <link rel="preload" as="image" href="images/drizzle-background.gif">
+    <link rel="preload" as="image" href="images/overcast-background.jpg">
+    <link rel="preload" as="image" href="images/sunny-background.jpg">
+    <link rel="stylesheet" href="weather.css">
+  </head>
+    
+</head>
+<body>
+    <div class="search">
+       <input type="text" id="city-input" placeholder="Enter city name">
+       <button onclick="api()" id="search-button">Get Weather</button>
+    </div>
+    <div class="container">
+        <div class="glass-effect">
+            <div class="current-weather">
+                <h2 id="cityname"></h2>
+                <p id="localtime"></p>
+                <h1 id="temperature"></h1>
+                <p class="condition" id="condition"></p>
+                <div class="details">
+                    <span id="high">Feel Like</span>
+                    <span>/</span>
+                    <span class="low" id="low"></span>
+                </div>
+            </div>
+            <div class="forecast">
+                <div class="forecast-header">
+                    <span>Hourly</span>
+                    <span>Daily</span>
+                    <span>Details</span>
+                    <span>Precipitation</span>
+                </div>
+                <div class="forecast-details">
+                    <div class="hour">
+                        <p id="time1">NOW</p>
+                        <img src="/images/cloudy.png" alt="Cloudy">
+                        <p id="temp1"></p>
+                    </div>
+                    <div class="hour">
+                        <p id="time2">11AM</p>
+                        <img src="/images/cloudy.png" alt="Cloudy">
+                        <p id="temp2"></p>
+                    </div>
+                    <div class="hour">
+                        <p id="time3">12PM</p>
+                        <img src="/images/cloudy.png" alt="Cloudy">
+                        <p id="temp3">75°</p>
+                    </div>
+                    <div class="hour">
+                        <p id="time4">1PM</p>
+                        <img src="/images/partly-cloudy.png" alt="Partly Cloudy">
+                        <p id="temp4">77°</p>
+                    </div>
+                    <div class="hour">
+                        <p id="time5">2PM</p>
+                        <img src="/images/sunny.png" alt="Sunny">
+                        <p id="temp5">81°</p>
+                    </div>
+                    <div class="hour">
+                        <p id="time6">3PM</p>
+                        <img src="/images/sunny.png" alt="Sunny">
+                        <p id="temp6">79°</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="weather.js"></script>
+</body>
+</html>

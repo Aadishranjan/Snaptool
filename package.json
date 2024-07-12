@@ -1,0 +1,24 @@
+{
+  "name": "Snaptool",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node src/app.js"
+  },
+  "keywords": [
+    "Snaptool",
+    "YouTubeDownloader",
+    "Weather"
+  ],
+  "author": "Aadish Ranjan",
+  "license": "ISC",
+  "description": "Snaptool is a versatile application offering YouTube video downloads, real-time weather reports, and easy contact options.",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "hbs": "^4.2.0",
+    "mongoose": "^8.5.0"
+  }
+}
