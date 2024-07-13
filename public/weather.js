@@ -6,7 +6,7 @@ function api() {
   searchButton.disabled = true;
   searchButton.textContent = "Loading...";
 
-  fetch(`http://api.weatherapi.com/v1/forecast.json?key=6ccf116eba6045c791585046241007&q=${city}`)
+  fetch("http://api.weatherapi.com/v1/forecast.json?key=6ccf116eba6045c791585046241007&q=${city}")
     .then(res => {
       if (!res.ok) {
         throw new Error("Network response was not ok");
