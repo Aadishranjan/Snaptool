@@ -50,10 +50,6 @@ app.get("/register", (req, res) => {
   res.render("register");
 });
 
-app.get("/weather", redirectLogin, (req, res) => {
-  res.render("weather");
-});
-
 app.get("/home", redirectLogin, (req, res) => {
   res.render("Home", { username: req.session.username, email: req.session.email });
 });
